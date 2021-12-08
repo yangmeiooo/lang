@@ -11,9 +11,9 @@
 - Broker  一个机器安装了一个Kafka 就算一个Broker,一个集群由一个或多个broker 组成
 - Producer  生产者，发送消息到topic
 - Consumer 消费者，从topic 中订阅消息
-- Consumer Group 由多个消费者组成的消费者组，组统一订阅一个topic,一条消息可以被多个组消费，组内只有一个消费者能消费这个消息
-- Topic  分类，每发送的消息都必须指定一个topic，逻辑上的概念
-- Partition  是物理上的概念，一个topic 是包含多个Partition ，一个Partition ，对应一个文件夹，，文件夹下有index 文件和log 文件，log 文件里含有offset.
+- Consumer Group 由多个消费者组成的消费者组，组统一订阅一个topic,一条消息可以被多个组消费，一个topic 的消息只能被一个消费者组消费一次，可能随机到组内的某个消费者实例消费（组内只有一个消费者能消费这个消息）
+- Topic  分类，每发送的消息都必须指定一个topic，逻辑上的概念（就是一个消息队列）
+- Partition  是物理上的概念，一个topic 是包含多个Partition ，一个Partition ，对应一个文件夹，，文件夹下有index 文件和log 文件，log 文件里含有offset. 存在的意义就是将一个topic（消息队列拆分成多个分区，其实就是多个队列，方便管理和分区并行处理，提升吞吐量）
 - Replica  副本， 即Partition 的副本，主副本leader 负责读写，并且同步消息到 所有的follower.
 - Leader
 - Follower
