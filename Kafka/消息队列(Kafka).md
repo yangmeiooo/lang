@@ -213,3 +213,13 @@ kafka 默认一个topic ，一个patition分区， 但是可以指定多个分�
 KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR这个参数就是用来配置__consumer_offsets副本数的。
 一个分区只能被一个消费组实例消费，多余的实例将会空闲？重新调整消费者数量多余分区数目，触发reblance ,导致消息消费异常。
 
+## 消费者
+一个分区只能被一个消费组实例消费，可是 分区数目多余 消费组的消费者数量，会存在一个消费者消费多个分区，不是矛盾吗？
+验证一下。
+
+消费者偏移量管理是怎么做的？
+每次消费者消费后，新版的kafka 会提交offset 给kafka的topic。
+
+消费者是如何实现rebalance的？
+
+
