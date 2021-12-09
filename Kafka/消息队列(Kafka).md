@@ -14,9 +14,9 @@
 - Consumer Group 由多个消费者组成的消费者组，组统一订阅一个topic,一条消息可以被多个组消费，一个topic 的消息只能被一个消费者组消费一次，可能随机到组内的某个消费者实例消费（组内只有一个消费者能消费这个消息），一个分区只能被一个消费组实例消费，多余的实例将会空闲？触发reblance ,导致消息消费异常。一个topic和多个分区，分区是topic 的全量副本，还是差异化集合？
 - Topic  分类，每发送的消息都必须指定一个topic，逻辑上的概念（就是一个消息队列）
 - Partition  是物理上的概念，一个topic 是包含多个Partition ，一个Partition ，对应一个文件夹，，文件夹下有index 文件和log 文件，log 文件里含有offset. 存在的意义就是将一个topic（消息队列拆分成多个分区，其实就是多个队列，方便管理和分区并行处理，提升吞吐量）
-- Replica  副本， 即Partition 的副本，主副本leader 负责读写，并且同步消息到 所有的follower.
-- Leader
-- Follower
+- Replica  副本， 即Partition 的副本，主副本leader 负责读写，并且同步消息到 所有的follower. 副本数不能超过集群机器数目。
+- Leader 副本集里面 的可读可写的主副本
+- Follower。副本集里面的 从副本，只能读
 
 
 
