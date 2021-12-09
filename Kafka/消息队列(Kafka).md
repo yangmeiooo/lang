@@ -223,3 +223,5 @@ KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR这个参数就是用来配置__consumer_o
 消费者是如何实现rebalance的？
 
 
+## kafka 的isr是
+
