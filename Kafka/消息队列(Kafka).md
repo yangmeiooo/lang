@@ -225,3 +225,17 @@ KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR这个参数就是用来配置__consumer_o
 
 ## kafka 的isr是
 
+
+
+## kafka 操作命令
+1. 查看topic 集合 bin/kafka-topics.sh --zookeeper host12:2181 --list
+2. 创建topic  bin/kafka-topics.sh --zookeeper host12:2181 --create --replication-factor 3 --partitions 1 --topic lrxtest0625
+3. 删除topic  bin/kafka-topics.sh --zookeeper host12:2181 --delete --topic lrxtest0625
+4. 查看topic 详情 bin/kafka-topics.sh --zookeeper host12:2181  --describe --topic lrxtest0625
+5. 生产者发送消息 bin/kafka-console-producer.sh --broker-list host12:9092 --topic lrxtest0625
+6. 消费者消费消息 bin/kafka-console-consumer.sh  --bootstrap-server host12:9092 --from-beginning --topic lrxtest0625
+
+--from-beginning：会把first主题中以往所有的数据都读取出来。根据业务场景选择是否增加该配置。
+
+ --bootstrap-server：生产消息的服务器
+
