@@ -1,0 +1,39 @@
+1. == ，euqals 区别
+== 操作符， equals 是方法
+==比较的是 基本数据类型是否相等，对象比较则是比较内存地址
+equals 看是否重写父类Object 的equals 方法。
+不重写默认比较内存地址
+重写： String 则是比较 内容是否相等。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+2. 浅拷贝和深拷贝
+protected native Object clone() throws CloneNotSupportedException;
+jdk api 只能实现浅拷贝
+通过实现Cloneable接口，重写clone 方法，调用父类的super.clone()
+达到浅拷贝。
+浅拷贝：创建一个新对象，将对象的非静态属性拷贝过去，如果属性是基本数据类型
+直接拷贝，属性是对象，则拷贝对象的引用。
+
+深拷贝：
+1.被拷贝对象的属性是引用，引用对象继续实现Cloneable 接口，但是不适用多个引用对象
+
+2.序列化后加  反序列化   得到新得clone 对象。
