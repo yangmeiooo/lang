@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<!--    <classPathEntry location="C:/Users/james/.m2/repository/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar"/>-->
+    <classPathEntry location="/Users/zhipengling/.m2/repository/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar"/>
+    <context id="context1" targetRuntime="MyBatis3DynamicSql">
+        <jdbcConnection connectionURL="jdbc:mysql://localhost:3306/test" driverClass="com.mysql.cj.jdbc.Driver" password="123456" userId="root" />
+        <javaModelGenerator targetPackage="com.james.demo.dao.model" targetProject="src/main/java" />
+        <javaClientGenerator targetPackage="com.james.demo.dao.mapper" targetProject="src/main/java"/>
+        <table schema="utf-8" tableName="book">
+            <!-- <columnOverride column="???" property="???" /> -->
+        </table>
+    </context>
+</generatorConfiguration>
