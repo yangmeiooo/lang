@@ -1,0 +1,13 @@
+server:
+  port: 8080
+
+spring:
+  redis:
+    host: 47.114.52.113
+    password: heimaleyou
+    database: 3
+
+# 调整控制台日志格式，稍微精简一些（非必要操作）
+logging:
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} - %thread - %msg%n"
