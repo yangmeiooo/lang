@@ -128,6 +128,3 @@ netty 所有操作都是异步得，需要这个进行回调通知
 6. Selector
 Netty 对nio selector  实现了一个IO 多路复用机制，通过Selector 一个线程可以监听多个连接得channel
 
-https://www.bilibili.com/video/BV1NZ4y1T7Y1/?spm_id_from=333.788.recommend_more_video.-1
-
-https://zhuanlan.zhihu.com/p/159346800
